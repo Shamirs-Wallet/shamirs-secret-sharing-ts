@@ -4,6 +4,8 @@ shamirs-secret-sharing
 A simple implementation of Shamir's Secret Sharing configured to use a
 finite field in GF(2^8) with 128 bit padding.
 
+TypeScript variant of https://github.com/jwerle/shamirs-secret-sharing based on version 1.0.1
+
 ## Preface
 
 Much of what you see in this module has been ported from or
