@@ -2,7 +2,8 @@
   "name": "shamirs-secret-sharing-ts",
   "version": "1.0.1",
   "description": "A simple implementation of Shamir's Secret Sharing configured to use a finite field in GF(2^8) with 128 bit padding",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "directories": {
     "test": "test"
   },
@@ -19,10 +20,7 @@
   ],
   "author": "Mathias Schütz <info@mathiasschuetz.com>",
   "license": "MIT",
-  "dependencies": {
-    "awesome-typescript-loader": "^5.2.1",
-    "source-map-loader": "^0.2.4"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
     "@types/node": "^13.11.1",

@@ -17,7 +17,7 @@ directly influenced by
 ## Installation
 
 ```sh
-$ npm install shamirs-secret-sharing
+$ npm install shamirs-secret-sharing-ts
 ```
 
 ## Example Usage

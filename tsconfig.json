@@ -7,6 +7,7 @@
     "module": "CommonJS",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
+    "declaration": true,
     "types": [
       "node"
     ],
