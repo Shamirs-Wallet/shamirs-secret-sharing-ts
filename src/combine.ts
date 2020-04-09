@@ -1,7 +1,7 @@
-const { BIN_ENCODING } = require('./constants')
-const { lagrange } = require('./lagrange')
-const { parse } = require('./share')
-const codec = require('./codec')
+import { BIN_ENCODING } from './constants'
+import { lagrange } from './lagrange'
+import { parse } from './share'
+import * as codec from './codec'
 
 /**
  * Reconstruct a secret from a distinct set of shares.
@@ -44,6 +44,6 @@ function combine(shares) {
   return Buffer.from(value)
 }
 
-module.exports = {
+export {
   combine
 }

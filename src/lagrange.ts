@@ -1,6 +1,6 @@
-const { logs, exps, max } = require('./table')
+import { logs, exps } from './table'
 
-const { MAX_SHARES } = require('./constants')
+import { MAX_SHARES } from './constants'
 
 function lagrange(x, p) {
   const n = MAX_SHARES
@@ -31,6 +31,6 @@ function lagrange(x, p) {
   return sum
 }
 
-module.exports = {
+export {
   lagrange
 }

@@ -13,7 +13,7 @@ const UTF8_ENCODING = 'utf8'
 const BIN_ENCODING = 'binary'
 const HEX_ENCODING = 'hex'
 
-module.exports = {
+export {
   PRIMITIVE_POLYNOMIAL,
 
   BIT_PADDING,

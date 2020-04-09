@@ -1,8 +1,8 @@
-const { split, combine } = require('../')
-const codec = require('../codec')
+const { split, combine } = require('../dist/')
+const codec = require('../dist/codec')
 const test = require('ava')
 
-const { MAX_SHARES } = require('../constants')
+const { MAX_SHARES } = require('../dist/constants')
 
 test('split(secret, opts) is a function', (t) => {
   t.true('function' === typeof split)

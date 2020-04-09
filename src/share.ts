@@ -1,4 +1,4 @@
-const { BIT_COUNT, BIT_SIZE } = require('./constants')
+import { BIT_COUNT, BIT_SIZE } from './constants'
 
 function parse(input) {
   const share = { id: null, bits: null, data: null }
@@ -26,6 +26,6 @@ function parse(input) {
   return share
 }
 
-module.exports = {
+export {
   parse
 }

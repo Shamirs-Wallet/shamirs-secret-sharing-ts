@@ -1,33 +1,47 @@
 {
-  "name": "shamirs-secret-sharing",
+  "name": "shamirs-secret-sharing-ts",
   "version": "1.0.1",
   "description": "A simple implementation of Shamir's Secret Sharing configured to use a finite field in GF(2^8) with 128 bit padding",
-  "main": "index.js",
+  "main": "src/index.ts",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "ava test"
+    "test": "tsc & ava test"
   },
   "keywords": [
     "shamir",
     "secret",
     "sharing",
-    "sss"
+    "sss",
+    "typescript",
+    "ts"
   ],
-  "author": "Joseph Werle <joseph.werle@gmail.com>",
+  "author": "Mathias Schütz <info@mathiasschuetz.com>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "source-map-loader": "^0.2.4"
+  },
   "devDependencies": {
+    "@ava/typescript": "^1.1.1",
+    "@types/node": "^13.11.1",
     "ava": "^0.25.0",
     "nyc": "^12.0.2"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jwerle/shamirs-secret-sharing.git"
+    "url": "git+https://github.com/mathiasschuetz/shamirs-secret-sharing.git"
   },
   "bugs": {
-    "url": "https://github.com/jwerle/shamirs-secret-sharing/issues"
+    "url": "https://github.com/mathiasschuetz/shamirs-secret-sharing/issues"
   },
-  "homepage": "https://github.com/jwerle/shamirs-secret-sharing#readme"
+  "homepage": "https://github.com/mathiasschuetz/shamirs-secret-sharing#readme",
+  "ava": {
+    "typescript": {
+      "rewritePaths": {
+        "src/": "build/"
+      }
+    }
+  }
 }

@@ -1,14 +1,14 @@
-const { lagrange } = require('./lagrange')
-const { horner } = require('./horner')
-const { points } = require('./points')
-const { random } = require('./random')
-const codec = require('./codec')
+import { lagrange } from './lagrange'
+import { horner } from './horner'
+import { points } from './points'
+import { random } from './random'
+import * as codec from './codec'
 
-const {
+import {
   BIN_ENCODING,
   BIT_PADDING,
   MAX_SHARES,
-} = require('./constants')
+} from './constants'
 
 // n = MAX_SHARES
 // x = 0 ... n
@@ -98,6 +98,6 @@ function split(secret, opts) {
   return result
 }
 
-module.exports = {
+export {
   split
 }

@@ -1,7 +1,7 @@
-const { MAX_SHARES } = require('./constants')
-const { logs, exps } = require('./table')
+import { MAX_SHARES } from './constants'
+import { logs, exps } from './table'
 
-function horner(x, a) {
+function horner(x: number, a: string | any[]) {
   const n = MAX_SHARES
   const t = a.length - 1
   let b = 0
@@ -13,6 +13,6 @@ function horner(x, a) {
   return b
 }
 
-module.exports = {
+export {
   horner
 }

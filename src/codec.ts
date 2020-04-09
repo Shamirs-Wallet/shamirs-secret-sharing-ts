@@ -1,35 +1,35 @@
-const { zeroes } = require('./table')
+import { zeroes } from './table'
 
-const {
+import {
   BYTES_PER_CHARACTER,
   UTF8_ENCODING,
   BIN_ENCODING,
   HEX_ENCODING,
   BIT_COUNT,
   BIT_SIZE,
-} = require('./constants')
+} from './constants'
 
-function pad(string, multiple) {
+function pad(text: string, multiple?: number) {
   let missing = 0
-  let result = string
+  let result = text
 
   if (!multiple) {
     multiple = BIT_COUNT
   }
 
-  if (string) {
-    missing = string.length % multiple
+  if (text) {
+    missing = text.length % multiple
   }
 
   if (missing) {
-    const offset = - ((multiple - missing) + string.length)
-    result = (zeroes + string).slice(offset)
+    const offset = - ((multiple - missing) + text.length)
+    result = (zeroes + text).slice(offset)
   }
 
   return result
 }
 
-function hex(buffer, encoding) {
+function hex(buffer: any, encoding?: string) {
   const padding = 2 * BYTES_PER_CHARACTER
 
   if (!encoding) {
@@ -51,7 +51,7 @@ function hex(buffer, encoding) {
 
     if (UTF8_ENCODING === encoding) {
       for (let i = 0; i < buffer.length; ++i) {
-        const chunk = String.fromCharCode(buffer[i]).toString(16)
+        const chunk = Number(String.fromCharCode(buffer[i])).toString(16)
         chunks.unshift(pad(chunk, padding))
       }
     }
@@ -81,7 +81,7 @@ function hex(buffer, encoding) {
   }
 }
 
-function bin(buffer, radix) {
+function bin(buffer: any, radix?: number) {
   const chunks = []
 
   if (!radix) {
@@ -117,7 +117,7 @@ function bin(buffer, radix) {
   return chunks.join('')
 }
 
-function encode(id, data) {
+function encode(id: any, data: any) {
   id = parseInt(id, 16)
 
   const padding = (BIT_SIZE - 1).toString(16).length
@@ -133,7 +133,7 @@ function encode(id, data) {
   return Buffer.concat([header, data])
 }
 
-function decode(buffer, encoding) {
+function decode(buffer: any, encoding?: string) {
   const padding = 2 * BYTES_PER_CHARACTER
   const offset = padding
   const chunks = []
@@ -153,7 +153,7 @@ function decode(buffer, encoding) {
   return Buffer.from(chunks)
 }
 
-function split(string, padding, radix) {
+function split(string: any, padding?: number, radix?: number) {
   const chunks = []
   let i = 0
 
@@ -176,7 +176,7 @@ function split(string, padding, radix) {
   return chunks
 }
 
-module.exports = {
+export {
   encode,
   decode,
   split,

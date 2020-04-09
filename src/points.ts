@@ -1,4 +1,4 @@
-const { horner } = require('./horner')
+import { horner } from './horner'
 
 function points(a0, opts) {
   const prng = opts.random
@@ -21,6 +21,6 @@ function points(a0, opts) {
   return p
 }
 
-module.exports = {
+export {
   points
 }
