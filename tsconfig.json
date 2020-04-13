@@ -3,7 +3,7 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "allowJs": false,
-    "target": "ES6",
+    "target": "ES2018",
     "module": "CommonJS",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
