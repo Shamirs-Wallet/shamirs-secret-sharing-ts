@@ -33,7 +33,7 @@ console.log(recovered.toString()) // 'secret key'
 
 ## API
 
-### `shares = sss.split(secret, opts)`
+### `shares = split(secret, opts)`
 
 Generate a set of unique and distinct shares for a secret with a
 configured threshold.
@@ -51,7 +51,7 @@ configured threshold.
     buffer based on some input. e.g `opts.random = (size) =>
     randomBytes(size)`
 
-### `secret = sss.combine(shares)`
+### `secret = combine(shares)`
 
 Reconstruct a secret from a distinct set of shares. This function _will
 not_ throw an error for incorrect shares or if `p(0)` is not the correct
