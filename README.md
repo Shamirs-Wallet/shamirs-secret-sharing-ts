@@ -31,6 +31,14 @@ const recovered = combine(shares.slice(3, 7))
 console.log(recovered.toString()) // 'secret key'
 ```
 
+In Angular 2 or higher add following to polyfills.ts
+
+```ts
+(window as any).global = window;
+// @ts-ignore
+window.Buffer = window.Buffer || require('buffer').Buffer;
+```
+
 ## API
 
 ### `shares = split(secret, opts)`
