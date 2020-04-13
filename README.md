@@ -1,4 +1,4 @@
-shamirs-secret-sharing
+shamirs-secret-sharing-ts
 ======================
 
 A simple implementation of Shamir's Secret Sharing configured to use a
@@ -22,8 +22,17 @@ $ npm install shamirs-secret-sharing-ts
 
 ## Example Usage
 
+```ts
+import { split, combine } from 'shamirs-secret-sharing-ts'
+
+const secret = Buffer.from('secret key')
+const shares = split(secret, { shares: 10, threshold: 4 })
+const recovered = combine(shares.slice(3, 7))
+console.log(recovered.toString()) // 'secret key'
+```
+
 ```js
-const sss = require('shamirs-secret-sharing')
+const sss = require('shamirs-secret-sharing-ts')
 const secret = Buffer.from('secret key')
 const shares = sss.split(secret, { shares: 10, threshold: 4 })
 const recovered = sss.combine(shares.slice(3, 7))
